@@ -3,11 +3,11 @@
 require_relative 'constants'
 require_relative 'input_args_error'
 require_relative 'result'
-require_relative 'validation_error_messages'
+require_relative 'input_args_error_messages'
 
 class InputArgsValidator
   include Constants
-  include ValidationErrorMessages
+  include InputArgsErrorMessages
 
   def self.validate(argv)
     new(argv).validate

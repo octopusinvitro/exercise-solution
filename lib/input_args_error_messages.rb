@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ValidationErrorMessages
+module InputArgsErrorMessages
   USAGE = 'Usage: ruby combine.rb --format (json|csv) ' \
           'path/to/journals.csv path/to/articles.csv ' \
           'path/to/authors.json > output_filename'
