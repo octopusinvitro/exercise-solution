@@ -23,6 +23,7 @@ class InputArgsValidator
 
   def validate
     raise(InputArgsError, error_message) unless validation.okay?
+    file_paths
   end
 
   private
@@ -66,5 +67,9 @@ class InputArgsValidator
 
   def file_exists?(path)
     File.file?(path || '')
+  end
+
+  def file_paths
+    { journals: journals, articles: articles, authors: authors }
   end
 end
