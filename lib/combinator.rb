@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'input_args_validator'
+
 class Combinator
   def self.run(argv)
     new(argv).run
@@ -10,6 +12,7 @@ class Combinator
   end
 
   def run
+    InputArgsValidator.validate(argv)
     argv
   end
 
