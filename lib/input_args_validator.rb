@@ -3,11 +3,11 @@
 require_relative 'constants'
 require_relative 'input_args_error'
 require_relative 'result'
-require_relative 'validation_error_messages'
+require_relative 'input_args_error_messages'
 
 class InputArgsValidator
   include Constants
-  include ValidationErrorMessages
+  include InputArgsErrorMessages
 
   def self.validate(argv)
     new(argv).validate
@@ -23,6 +23,7 @@ class InputArgsValidator
 
   def validate
     raise(InputArgsError, error_message) unless validation.okay?
+    file_paths
   end
 
   private
@@ -66,5 +67,9 @@ class InputArgsValidator
 
   def file_exists?(path)
     File.file?(path || '')
+  end
+
+  def file_paths
+    { journals: journals, articles: articles, authors: authors }
   end
 end

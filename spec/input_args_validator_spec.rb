@@ -8,8 +8,11 @@ RSpec.describe InputArgsValidator do
 
   describe('when validation succeeds') do
     it 'validates' do
+      file_paths = {
+        journals: 'journals', articles: 'articles', authors: 'authors'
+      }
       allow(File).to receive(:file?).and_return(true)
-      expect(described_class.validate(input_args)).to be_nil
+      expect(described_class.validate(input_args)).to eq(file_paths)
     end
   end
 
