@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'input_args_validator'
+require_relative 'input_files_validator'
 
 class Combinator
   def self.run(argv)
@@ -12,7 +13,8 @@ class Combinator
   end
 
   def run
-    InputArgsValidator.validate(argv)
+    file_paths = InputArgsValidator.validate(argv)
+    InputFilesValidator.validate(file_paths)
     argv
   end
 

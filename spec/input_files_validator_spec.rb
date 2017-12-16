@@ -57,11 +57,4 @@ RSpec.describe InputFilesValidator do
         .to raise_error(InputFilesError).with_message(messages)
     end
   end
-
-  def new_tempfile(contents, filename)
-    Tempfile.open(filename) do |f|
-      f.write(contents)
-      f.path
-    end
-  end
 end

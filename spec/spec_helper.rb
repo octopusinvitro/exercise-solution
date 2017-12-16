@@ -107,3 +107,10 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 end
+
+def new_tempfile(contents, filename)
+  Tempfile.open(filename) do |f|
+    f.write(contents)
+    f.path
+  end
+end
