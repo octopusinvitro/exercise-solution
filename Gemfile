@@ -3,6 +3,8 @@
 source 'https://rubygems.org'
 ruby '2.4.2'
 
+gem 'csv'
+
 group :test do
   gem 'coveralls', require: false
   gem 'pry'
