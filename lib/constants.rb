@@ -30,6 +30,12 @@ module Constants
   OUTPUT_JOURNAL_COLUMN = 'Journal'
   OUTPUT_ISSN_COLUMN = 'ISSN'
 
+  OUTPUT_DOI_PROPERTY = 'doi'
+  OUTPUT_TITLE_PROPERTY = 'title'
+  OUTPUT_AUTHOR_PROPERTY = 'author'
+  OUTPUT_JOURNAL_PROPERTY = 'journal'
+  OUTPUT_ISSN_PROPERTY = 'issn'
+
   UNKNOWN_AUTHOR = 'Unknown author'
   UNKNOWN_JOURNAL = 'Unknown journal'
 end
