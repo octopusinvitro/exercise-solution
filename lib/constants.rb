@@ -9,5 +9,7 @@ module Constants
     JOURNALS_TITLE_COLUMN, JOURNALS_ISSN_COLUMN
   ].freeze
   ARTICLES_REQUIRED_COLUMNS = %i[doi title issn].freeze
+  AUTHORS_NAME_PROPERTY = 'name'
+  AUTHORS_DOIS_PROPERTY = 'articles'
   AUTHORS_SCHEMA_PATH = 'lib/json_schemas/authors_schema.json'
 end
