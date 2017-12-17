@@ -37,6 +37,15 @@ RSpec.describe Combinator do
 
   it 'spits JSON if inputs are valid' do
     argv = ['--format', 'json', journals, articles, authors]
-    expect(described_class.run(argv)).to eq(argv)
+    json = [
+      {
+        'doi' => 'doi1',
+        'title' => 'Title2',
+        'author' => ['A Name'],
+        'journal' => 'Journal name',
+        'issn' => '1234-5678'
+      }
+    ].to_json
+    expect(described_class.run(argv)).to eq(json)
   end
 end
