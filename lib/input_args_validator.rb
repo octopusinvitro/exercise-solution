@@ -13,12 +13,18 @@ class InputArgsValidator
     new(argv).validate
   end
 
+  def self.output_format(argv)
+    argv[1]
+  end
+
+  def self.file_paths(argv)
+    { journals: argv[2], articles: argv[3], authors: argv[4] }
+  end
+
   def initialize(argv)
     @size = argv.size
-    @output_format = argv[1]
-    @journals = argv[2]
-    @articles = argv[3]
-    @authors = argv[4]
+    @output_format = self.class.output_format(argv)
+    @file_paths = self.class.file_paths(argv)
   end
 
   def validate
@@ -28,7 +34,7 @@ class InputArgsValidator
 
   private
 
-  attr_reader :size, :output_format, :journals, :articles, :authors
+  attr_reader :size, :output_format, :file_paths
 
   def error_message
     errors = validation.errors.join("\n")
@@ -54,22 +60,18 @@ class InputArgsValidator
   end
 
   def validate_journals_existence
-    MISSING_JOURNALS_FILE unless file_exists?(journals)
+    MISSING_JOURNALS_FILE unless file_exists?(file_paths[:journals])
   end
 
   def validate_articles_existence
-    MISSING_ARTICLES_FILE unless file_exists?(articles)
+    MISSING_ARTICLES_FILE unless file_exists?(file_paths[:articles])
   end
 
   def validate_authors_existence
-    MISSING_AUTHORS_FILE unless file_exists?(authors)
+    MISSING_AUTHORS_FILE unless file_exists?(file_paths[:authors])
   end
 
   def file_exists?(path)
     File.file?(path || '')
-  end
-
-  def file_paths
-    { journals: journals, articles: articles, authors: authors }
   end
 end

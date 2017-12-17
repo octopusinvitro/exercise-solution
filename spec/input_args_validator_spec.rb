@@ -5,12 +5,22 @@ require 'input_args_validator'
 
 RSpec.describe InputArgsValidator do
   let(:input_args) { %w[--format json journals articles authors] }
+  let(:file_paths) do
+    {
+      journals: 'journals', articles: 'articles', authors: 'authors'
+    }
+  end
+
+  it 'knows the output file format' do
+    expect(described_class.output_format(input_args)).to eq('json')
+  end
+
+  it 'knows the file paths' do
+    expect(described_class.file_paths(input_args)).to eq(file_paths)
+  end
 
   describe('when validation succeeds') do
     it 'validates' do
-      file_paths = {
-        journals: 'journals', articles: 'articles', authors: 'authors'
-      }
       allow(File).to receive(:file?).and_return(true)
       expect(described_class.validate(input_args)).to eq(file_paths)
     end
