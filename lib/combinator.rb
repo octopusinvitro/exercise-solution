@@ -2,6 +2,7 @@
 
 require_relative 'constants'
 require_relative 'csv_output_formatter'
+require_relative 'json_output_formatter'
 require_relative 'input_args_validator'
 require_relative 'input_files_validator'
 
@@ -34,7 +35,7 @@ class Combinator
     if csv?
       CSVOutputFormatter.output(file_paths)
     else
-      argv
+      JSONOutputFormatter.output(file_paths)
     end
   end
 
