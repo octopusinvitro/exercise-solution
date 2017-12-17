@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/octopusinvitro/exercise-solution.svg?branch=master)](https://travis-ci.org/octopusinvitro/exercise-solution)
-[![build status](https://gitlab.com/octopusinvitro/exercise-solution/badges/master/build.svg)](https://gitlab.com/me-stevens/exercise-solution/commits/master)
+[![build status](https://gitlab.com/octopusinvitro/exercise-solution/badges/master/build.svg)](https://gitlab.com/octopusinvitro/exercise-solution/commits/master)
 [![Coverage Status](https://coveralls.io/repos/github/octopusinvitro/exercise-solution/badge.svg?branch=master)](https://coveralls.io/github/octopusinvitro/exercise-solution?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7e36a9b166c281d0fc40/maintainability)](https://codeclimate.com/github/octopusinvitro/exercise-solution/maintainability)
 
