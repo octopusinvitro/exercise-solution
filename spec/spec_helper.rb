@@ -114,3 +114,5 @@ def new_tempfile(contents, filename)
     f.path
   end
 end
+
+TEST_FILES_PATH = 'spec/test_files'
