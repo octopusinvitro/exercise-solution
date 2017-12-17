@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 require 'csv'
+
 require_relative 'constants'
+require_relative 'issn_helper'
 
 class CSVJournalsParser
   def self.parse(path)
@@ -55,16 +57,7 @@ class CSVJournalsParser
     attr_reader :row
 
     def issn
-      insert_dash unless includes_dash?
-      row[JOURNALS_ISSN_COLUMN].to_sym
-    end
-
-    def insert_dash
-      row[JOURNALS_ISSN_COLUMN].insert(4, '-')
-    end
-
-    def includes_dash?
-      row[JOURNALS_ISSN_COLUMN].include?('-')
+      ISSNHelper.issn(row[JOURNALS_ISSN_COLUMN]).to_sym
     end
 
     def title
