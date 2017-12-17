@@ -2,7 +2,10 @@
 
 module Constants
   ARGV_SIZE = 5
-  VALID_OUTPUT_FORMATS = %w[json csv].freeze
+
+  JSON_FORMAT = 'json'
+  CSV_FORMAT = 'csv'
+  VALID_OUTPUT_FORMATS = [JSON_FORMAT, CSV_FORMAT].freeze
 
   JOURNALS_TITLE_COLUMN = :title
   JOURNALS_ISSN_COLUMN = :issn

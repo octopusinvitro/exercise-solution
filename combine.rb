@@ -2,4 +2,4 @@
 
 require_relative 'lib/combinator'
 
-puts Combinator.run(ARGV)
+print Combinator.run(ARGV)
